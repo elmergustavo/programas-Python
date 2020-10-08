@@ -1,5 +1,6 @@
 #1.- Comenzar a hacer comparaciones de elementos adyacentes
 #2.- Repetir hasta tener una pasada completa sin ningun swap
+# esta es una modificacion en pyton
 from datetime import datetime
 
 def bubbleSort(array):
