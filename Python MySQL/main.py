@@ -45,6 +45,24 @@ class DataBase:
         except Exception as e:
             raise
 
+    def update_users(self, id, username):
+        sql = "UPDATE users SET username='{}' WHERE id = {}".format(username, id)
 
-database = DataBase()
-database.selec_all_users()
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit() #cuando insertemo modifiquemos o elimar alguna consulta
+        except Exception as e:
+            raise
+
+    def close(self):
+        self.connection.close()
+
+
+database = DataBase();
+database.select_user(1)
+
+database.update_users(1,'Cambio de nombre!')
+database.select_user(1)
+
+database.close()
+
